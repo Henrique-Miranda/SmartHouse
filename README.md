@@ -14,10 +14,12 @@ Basic instructions:
 See: https://learn.adafruit.com/micropython-basics-load-files-and-run-code/install-ampy<br>
 5 - Reboot the board and acess http://esp_ip_adress to view UI and turn on and off I/O Pins.<br>
 
-<b>Screenshots:<b>
-<br>
-<h3>Mobile</h3>
-![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousemobile.jpeg "Mobile")
+<b>Screenshots:<b><br>
+  <br>
+Mobile
+  ![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousemobile.jpeg "Mobile")
 
-<h3>Desktop</h3>
-![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousedesktop.jpeg "Desktop")
+<br>
+  
+Desktop
+  ![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousedesktop.jpeg "Desktop")
