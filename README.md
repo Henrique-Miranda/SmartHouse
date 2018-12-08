@@ -16,10 +16,9 @@ See: https://learn.adafruit.com/micropython-basics-load-files-and-run-code/insta
 
 <b>Screenshots:<b><br>
   <br>
-Mobile
+
   ![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousemobile.jpeg "Mobile")
 
 <br>
-  
-Desktop
+
   ![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousedesktop.jpeg "Desktop")
