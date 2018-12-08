@@ -1,9 +1,9 @@
-<b>Features:<b>
+<b>Features:</b>
 
 -Json to get last Pins status.<br>
 -Nice responsive UI using Bootstrap.<br>
 
-<b>Basic instructions:<b>
+<b>Basic instructions:</b>
 
 1 - Flash the micropython firmware following this link: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html <br>
 2 - Configure the wifi settings of board following: https://docs.micropython.org/en/latest/esp8266/quickref.html <br>
@@ -14,7 +14,7 @@
 See: https://learn.adafruit.com/micropython-basics-load-files-and-run-code/install-ampy<br>
 5 - Reboot the board and acess http://esp_ip_adress to view UI and turn on and off I/O Pins.<br>
 
-<b>Screenshots:<b><br>
+<b>Screenshots:</b><br>
   <br>
 
   ![mobile](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousemobile.jpeg "Mobile")
