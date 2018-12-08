@@ -21,4 +21,4 @@ See: https://learn.adafruit.com/micropython-basics-load-files-and-run-code/insta
 
 <br>
 
-  ![alt text](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousedesktop.jpeg "Desktop")
+  ![alt text 2](https://raw.githubusercontent.com/Henrique-Miranda/SmartHouse/master/img/smarthousedesktop.png "Desktop")
