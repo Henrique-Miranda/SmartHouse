@@ -1,7 +1,7 @@
 Features:
 
 -Json to get last Pins status.<br>
--Nice UI using Bootstrap.<br>
+-Nice responsive UI using Bootstrap.<br>
 
 Basic instructions:
 
