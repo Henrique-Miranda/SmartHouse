@@ -3,6 +3,7 @@ Features:
 -Json to get last Pins status.<br>
 -Nice UI using Bootstrap.<br>
 
+Basic instructions:
 
 1 - Flash the micropython firmware following this link: https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html <br>
 2 - Configure the wifi settings of board following: https://docs.micropython.org/en/latest/esp8266/quickref.html <br>
