@@ -1,5 +1,8 @@
-import usocket, ujson
+import usocket
 from machine import Pin
+from os import listdir
+from ujson import dump, load
+from time import ticks_diff, ticks_ms, sleep
 
 #Config of I/O Pins
 '''
@@ -10,24 +13,25 @@ scozinha = Pin(12, Pin.OUT)
 quarto = Pin(14, Pin.OUT)
 '''
 #ESP03
-bomba = Pin(16, Pin.OUT)
-quintal = Pin(3, Pin.OUT)
+bomba = Pin(14, Pin.OUT)
+quintal = Pin(12, Pin.OUT)
 scozinha = Pin(5, Pin.OUT)
 quarto = Pin(4, Pin.OUT)
 
+# TIMER
+TIMER = 0
+
 #Write in Json last states of Pins
 def writelastcfg():
-    
-    lastcfg = {'BOMBA': bomba.value(), 'QUINTAL': quintal.value(), 'SCOZINHA': scozinha.value(), 'QUARTO': quarto.value()}
+    lastcfg = {'BOMBA': 0, 'QUINTAL': quintal.value(), 'SCOZINHA': scozinha.value(), 'QUARTO': quarto.value()}
     with open('lastcfg.json', 'w') as f:
-        ujson.dump(lastcfg, f)
+        dump(lastcfg, f)
 
 #Retrive last Pin states saved in Json
 def getlastcfg():
-    
     try:
         with open('lastcfg.json', 'r') as f:
-            lastcfg = ujson.load(f)
+            lastcfg = load(f)
         bomba.value(lastcfg['BOMBA'])
         quintal.value(lastcfg['QUINTAL'])
         scozinha.value(lastcfg['SCOZINHA'])
@@ -37,7 +41,7 @@ def getlastcfg():
         quintal.value(0)
         scozinha.value(0)
         quarto.value(0)
-        
+
 
 def ok(socket, query):
     socket.write("HTTP/1.1 OK\r\n\r\n")
@@ -96,6 +100,7 @@ def handle(socket):
     elif method == b"POST":
         if path == b"/bombaon":
             bomba.value(1)
+            TIMER = ticks_ms()
             ok(socket, query)
         elif path == b"/bombaoff":
             bomba.value(0)
@@ -127,12 +132,19 @@ def handle(socket):
         err(socket, "501", "Not Implemented")
         
 #When the board turn on get last Pin states from json file
+if 'lastcfg.json' not in listdir():
+    writelastcfg()
+
 getlastcfg()
 server = usocket.socket()
 server.bind(('', 80))
 server.listen(1)
 
 while True:
+    if bomba.value():
+        if ticks_diff(ticks_ms(), TIMER) >= 600000:
+            bomba.value(0)
+            TIMER = 0
     try:
         (socket, sockaddr) = server.accept()
         handle(socket)
